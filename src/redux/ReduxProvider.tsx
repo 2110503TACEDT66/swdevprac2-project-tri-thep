@@ -8,9 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 
 export default function ReduxProvider({children}:{children:React.ReactNode}) {
-
     const reduxPersistor = persistStore(store)
-
 
     return (
         <ReactReduxProvider store={store}>

@@ -7,13 +7,10 @@ import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 
 export default function Banner() {
-
-    
     const covers = ['/img/cover.jpg', '/img/cover2.jpg', '/img/cover3.png', '/img/cover4.png' ]
     const [index, setIndex] = useState(0)
     const router = useRouter()
     const {data:session} = useSession()
-
 
     return (
         <div className={styles.banner} onClick={()=>{setIndex(index+1)}}>
@@ -24,7 +21,7 @@ export default function Banner() {
             objectFit='cover'
             />
             <div className={styles.bannertext}>
-                <h1 className='text-4xl font-medium'>Online Job Fair Registration</h1>
+                <h1 className='text-4xl font-medium '>Online Job Fair Registration</h1>
             </div>
             {
                 session? <div className='z-30 absolute top-20 right-10 font-semibold text-white text-3xl'>
