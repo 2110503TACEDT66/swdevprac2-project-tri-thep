@@ -1,14 +1,7 @@
 'use client'
-
 import React from 'react';
 
 export default function InteractiveCard( {children, contentName} : {children:React.ReactNode, contentName:string}) {
-
-
-    function onCarSelected() {
-        alert("You Select " + contentName)
-    }
-
     function onCardMouseAction(event : React.SyntheticEvent) {
         if (event.type === 'mouseover') {
             event.currentTarget.classList.remove('shadow-lg')

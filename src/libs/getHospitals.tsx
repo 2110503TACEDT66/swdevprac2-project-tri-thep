@@ -1,6 +1,4 @@
-
-
-export default async function getHospitals() {
+export default async function getCompanies() {
 
     await new Promise((reslove)=>setTimeout(reslove, 1000))
 
@@ -8,13 +6,8 @@ export default async function getHospitals() {
     const response = await fetch("https://vaccine-app-backend.vercel.app/api/v1/hospitals")
 
     if (!response.ok) {
-        throw new Error("Failed to fetch hospitals")
+        throw new Error("Failed to fetch companies")
     }
 
     return await response.json()
 }
-
-// ( async ()=> {
-//   const data = await getHospitals() 
-//   console.log()
-// }) ()

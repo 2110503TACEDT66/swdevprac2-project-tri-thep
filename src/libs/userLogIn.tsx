@@ -1,6 +1,3 @@
-
-
-
 export default async function userLogIn(userEmail:string, userPassword:string) {
 
     const response = await fetch("https://vaccine-app-backend.vercel.app:443/api/v1/auth/login", {

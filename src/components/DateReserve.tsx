@@ -14,11 +14,10 @@ export default function DateReserve() {
                 <DatePicker className="bg-white"/>
 
             </LocalizationProvider>
-            <Select variant="standard" name="location" id="hospital"
-            className="h-[2em] w-[200px]">
-                <MenuItem value="Chula">Chulalongkorn Hospital</MenuItem>
-                <MenuItem value="Rajavithi">Rajavithi Hospital </MenuItem>
-                <MenuItem value="Thammasat"> Thammasat University Hospital</MenuItem>
+            <Select variant="standard" name="location" id="company" className="h-[2em] w-[200px]">
+                <MenuItem value="IBM">IBM</MenuItem>
+                <MenuItem value="Microsoft">Microsoft</MenuItem>
+                <MenuItem value="JP">J.P.Morgan</MenuItem>
             </Select>
         </div>
     );

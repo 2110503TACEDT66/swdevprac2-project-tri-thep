@@ -1,4 +1,4 @@
-export interface HospitalItem {
+export interface CompanyItem {
     _id: string,
     name: string,
     address: string,
@@ -11,17 +11,17 @@ export interface HospitalItem {
     id: string
   }
   
- export interface HospitalJson {
+ export interface CompanyJson {
     success: boolean,
     count: number,
     pagination: Object,
-    data: HospitalItem[]
-  }
+    data: CompanyItem[]
+ }
 
  export interface BookingItem {
     name: string;
     surname: string;
     id: string;
-    hospital: string;
+    company: string;
     bookDate: string;
   }

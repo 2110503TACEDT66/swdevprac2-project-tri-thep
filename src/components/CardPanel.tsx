@@ -1,22 +1,20 @@
 'use client'
-
 import { useReducer } from 'react';
 import Card from './Card';
-import { act } from 'react-dom/test-utils';
 import Link from 'next/link';
 
 export default function CardPanel() {
 
-    const showRatingReducer = ( ratingList: Map<string, number>, action: { type: string; hospitalName: string; rating: number }) => {
+    const showRatingReducer = ( ratingList: Map<string, number>, action: { type: string; companyName: string; rating: number }) => {
       
         switch (action.type) {
             case 'add' : {
                 
-                return new Map(ratingList.set(action.hospitalName, action.rating))
+                return new Map(ratingList.set(action.companyName, action.rating))
             }
 
             case 'remove' : {
-                ratingList.delete(action.hospitalName);
+                ratingList.delete(action.companyName);
                 return new Map(ratingList)
             }
 
@@ -26,9 +24,9 @@ export default function CardPanel() {
     }
 
     const [ratingList, dispatchRating] = useReducer(showRatingReducer, new Map([
-        ['Chulalongkorn Hospital', 5],
-        ['Rajavithi Hospital', 5],
-        ['Thammasat University Hospital', 5],
+        ['IBM', 5],
+        ['Microsoft', 5],
+        ['J.P.Morgan', 5],
         ]))
 
         
@@ -37,30 +35,29 @@ export default function CardPanel() {
      * Mock data only
      */
     const mockHospitalRepo = [
-        {hid:"001", name: "Chulalongkorn Hospital", image: "/img/chula.jpg"},
-        {hid:"002", name: "Rajavithi Hospital", image:"/img/rajavithi.jpg"},
-        {hid:"003", name: "Thammasat University Hospital", image: "/img/thammasat.jpg"}
+        {cid:"001", name: "IBM", image: "/img/IBM.jpg"},
+        {cid:"002", name: "Microsoft", image:"/img/microsoft.jpg"},
+        {cid:"003", name: "J.P.Morgan", image: "/img/JP.jpg"}
     ]
     return(
         <div>
            <div style={{margin:"20px", display: "flex", flexDirection:"row",
-            flexWrap: "wrap", justifyContent:"space-around", alignContent: "space-around" }}>
-                
+            flexWrap: "wrap", justifyContent:"space-around", alignContent: "space-around" }}>     
             {
-                mockHospitalRepo.map((hospitalItem)=>(
-                    <Link href={`hospital/${hospitalItem.hid}`} className='w-1/5'>
-                    <Card hospitalName={hospitalItem.name} imgSrc={hospitalItem.image} 
-                rating={(hospital: string, Rating: number)=> dispatchRating({type:'add', hospitalName:hospital, rating:Rating})} />
+                mockHospitalRepo.map((companyItem)=>(
+                    <Link href={`hospital/${companyItem.cid}`} className='w-1/5'>
+                    <Card companyName={companyItem.name} imgSrc={companyItem.image} 
+                rating={(company: string, Rating: number)=> dispatchRating({type:'add', companyName:company, rating:Rating})} />
                 </Link>
                 ))
                 
             }
             </div>
             <div >
-                {Array.from(ratingList).map(([hospital, rating])=>
-                <div data-testid={hospital} className='p-2' 
-                onClick={()=> dispatchRating({type:'remove', hospitalName:hospital, rating:rating})}
-               > {hospital} Rating:{rating}
+                {Array.from(ratingList).map(([company, rating])=>
+                <div data-testid={company} className='p-2' 
+                onClick={()=> dispatchRating({type:'remove', companyName:company, rating:rating})}
+               > {company} Rating:{rating}
                </div>)}
             </div>
         </div>

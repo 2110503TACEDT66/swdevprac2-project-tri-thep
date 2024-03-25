@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from './topmenu.module.css'
 import TopMenuItem from "./TopMenuItem";
 import { getServerSession } from 'next-auth';
-import { AuthOptions } from 'next-auth';
 import { Link } from '@mui/material'
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
@@ -11,8 +10,6 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 export default async function TopMenu() {
 
     const session = await getServerSession(authOptions)
-
-
 
     return(
         <div className={styles.menucontainer}>
@@ -29,7 +26,7 @@ export default async function TopMenu() {
             
             <TopMenuItem title='Booking' pageref='/booking'/>
            
-            <Image src="/img/vaccine-6592893_1280.png"
+            <Image src="/img/logo.jpg"
             alt="logo"
             className={styles.logoimg}
             width={0}
