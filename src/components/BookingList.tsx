@@ -18,9 +18,9 @@ export default function BookingList() {
                     <div className="text-sm">ID: {reservationItem.id}</div>
                     <div className="text-md">At: {reservationItem.company}</div>
                     <div className="text-md">On: {reservationItem.bookDate}</div>
-                    <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 
+                    <button className="block rounded-md bg-red-400 hover:bg-red-600 px-3 py-2 
                         text-white shadow-sm" onClick={()=> dispatch(removeBooking(reservationItem.id))}>
-                        Cancel
+                        Delete
                     </button>
                 </div>
             )) : <h2 className="text-2xl text-cyan-600 m-10 p-10  text-center"> No Interview Session Booking</h2>

@@ -34,7 +34,7 @@ export default  function Booking () {
                 name: name,
                 surname: surname,
                 id: id,
-                hospital: location,
+                company: location,
                 bookDate: dayjs(pickupDate).format("YYYY/MM/DD")
             }
             dispatch(addBooking(item))
@@ -44,7 +44,7 @@ export default  function Booking () {
 
     return (
         <main className="w-[100%] flex flex-col items-center space-y-4">
-             <div className="text-xl font-medium">New Vaccine Reservation </div>
+             <div className="text-xl font-medium">New Company Booking </div>
              
             <div className="w-fit space-y-2">
                 <div className="pb-8">
@@ -65,9 +65,9 @@ export default  function Booking () {
                     <div className="p-5 m-5">
                     <Select variant="standard" name="Hospital" id="hospital" value={location} onChange={(e) =>{setLocation(e.target.value)}}
                     className="h-[2em] w-[200px]">
-                    <MenuItem value="Chula">Chulalongkorn Hospital</MenuItem>
-                    <MenuItem value="Rajavithi">Rajavithi Hospital </MenuItem>
-                    <MenuItem value="Thammasat"> Thammasat University Hospital</MenuItem>
+                    <MenuItem value="IBM">IBM</MenuItem>
+                    <MenuItem value="Microsoft">Microsoft</MenuItem>
+                    <MenuItem value="JP">JP</MenuItem>
                     </Select>
                     </div>
                     {/* <DateReserve/> */}
@@ -76,8 +76,8 @@ export default  function Booking () {
                 
             </div>
            <button  onClick={makeBooking} className="block rounded-md bg-emerald-500 hover:bg-emerald-400 px-3 py-2 
-           text-white shadow-sm" name="Book Vaccine">
-             Book Vaccine
+           text-white shadow-sm" name="Book Company">
+             Book Company
            </button>
 
            
