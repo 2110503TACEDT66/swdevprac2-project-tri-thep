@@ -18,9 +18,10 @@ export interface CompanyJson {
 }
 
 export interface InterviewItem {
+   _id:string
    id: string;
    interviewDate: string;
-   company: string;
+   company: CompanyItem;
    user: string
    createdAt: string
 }
