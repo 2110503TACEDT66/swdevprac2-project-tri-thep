@@ -20,7 +20,7 @@ export default function InterviewList() {
                     const data = await getInterviews((session as any).user.token);
                     setInterviewItems(data.data)
                 } catch (error) {
-                    console.error("Failed to fetch dentists:", error);
+                    console.error("Failed to fetch interviews:", error);
                 }
             })();
         }
