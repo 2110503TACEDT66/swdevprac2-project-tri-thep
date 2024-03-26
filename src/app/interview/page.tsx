@@ -20,7 +20,7 @@ export default function Interview() {
     const [interviewDate, setInterviewDate] = useState<Dayjs | null>(null)
     const [company, setCompany] = useState('')
 
-    const makeBooking = async () => {
+    async function makeBooking () {
         if (session && interviewDate !== null && company !== "") {
             await createInterview(
                 interviewDate.toISOString(),
@@ -32,14 +32,14 @@ export default function Interview() {
 
     return (
         <main className="w-[100%] flex flex-col items-center space-y-4">
-            <div className="text-xl font-medium">New Company Booking </div>
+            <div className="text-xl font-medium">New Interview Booking </div>
 
             <div className="w-fit space-y-2">
                 <CompanyDateReserve onCompanyChanged={setCompany} onDateChanged={setInterviewDate} />
             </div>
             <button onClick={makeBooking} className="block rounded-md bg-emerald-500 hover:bg-emerald-400 px-3 py-2 
-           text-white shadow-sm" name="Book Company">
-                Book Company
+           text-white shadow-sm" name="Book An Interview">
+                Book An Interview
             </button>
         </main>
     );

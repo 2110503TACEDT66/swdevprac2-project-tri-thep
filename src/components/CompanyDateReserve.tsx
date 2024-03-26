@@ -6,7 +6,7 @@ import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs"
 import { Select, MenuItem} from "@mui/material"
 import { useEffect, useState } from "react"
 import getCompanies from "@/libs/getCompanies"
-import { CompanyItem } from "../../interface"
+import { CompanyItem, InterviewItem } from "../../interface"
 import dayjs from "dayjs"
 
 export default function CompanyDateReserve({
@@ -34,7 +34,7 @@ export default function CompanyDateReserve({
         <div className="bg-slate-100 round-lg space-x-5 space-y-2
         w-fit px-10 py-5 flex flex-row justify-center">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker className="bg-white" onChange={(value: any)=>{onDateChanged(dayjs(value))}}/>
+                <DatePicker className="bg-white" minDate={dayjs()} onChange={(value: any)=>{onDateChanged(dayjs(value))}}/>
             </LocalizationProvider>
             <Select variant="standard" name="location" id="company" className="h-[2em] w-[200px]" onChange={(e)=>{onCompanyChanged(e.target.value)}}>
                 {companies.map((company: CompanyItem) => (
