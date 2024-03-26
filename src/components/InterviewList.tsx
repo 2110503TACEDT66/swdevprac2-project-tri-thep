@@ -34,7 +34,14 @@ export default function InterviewList() {
     }, [refresh, session]);
     
     async function deleteInterview(id: string){if(session != null) {
-        await DeleteInterview(id, (session.user as any).token)
+        setLoading(true)
+        try {
+            await DeleteInterview(id, (session.user as any).token)
+        }
+        catch {
+            alert("Cannot delete an interview.")
+            setLoading(false)
+        }
         setRefresh(!refresh) 
     }}
 

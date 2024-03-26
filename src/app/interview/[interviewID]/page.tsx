@@ -33,13 +33,20 @@ export default function InterviewEditPage({params} : {params: {interviewID : str
     }, [session]);
 
     async function update () {
+        setLoading(true)
         if (session && interviewDate !== null) {
-            await updateInterview(
-                interviewDate.toISOString(),
-                params.interviewID,
-                (session.user as any).token,
-            );
+            try{
+                await updateInterview(
+                    interviewDate.toISOString(),
+                    params.interviewID,
+                    (session.user as any).token,
+                )
+                alert("Success.")
+            }catch{
+                alert("Failed.")
+            }
         }
+        setLoading(false)
     }
 
     return (
