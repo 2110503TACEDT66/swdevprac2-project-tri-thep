@@ -34,11 +34,11 @@ export default function InterviewList() {
     return (
         <>
            { interviewItems.length > 0 ? interviewItems.map((item:InterviewItem)=> (
-                <div className="bg-slate-200 rounded px-5 py-2 my-2" key={item.id}>
-                    <div className="text-md text-black">At: {item.company}</div>
+                <div className="bg-slate-200 rounded px-5 py-2 my-2" key={item["_id"]}>
+                    <div className="text-md text-black">At: {item.company.name}</div>
                     <div className="text-md text-black">On: {dayjs(item.interviewDate).format("YYYY-MM-DD")}</div>
                     <button className="block rounded-md bg-red-400 hover:bg-red-600 px-3 py-2 
-                        text-white shadow-sm" onClick={() => deleteInterview(item.id)}>
+                        text-white shadow-sm" onClick={() => deleteInterview(item["_id"])}>
                         Delete
                     </button>
                 </div>
