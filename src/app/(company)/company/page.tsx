@@ -15,7 +15,6 @@ export default async function Company() {
         <Suspense fallback={<p>Loading...<LinearProgress/></p>}>
             <CompanyCatalog companiesJson={companies}/>
         </Suspense>
-     
     </main>
     );
 

@@ -7,12 +7,14 @@ export default async function userRegister(name: string, email: string, password
         body: JSON.stringify({
             name: name,
             email: email,
+            tel: tel,
             password: password,
-            tel: tel
+            role: "user"
         }),
     })
 
     if (!response.ok) {
+        console.log(response.body)
         throw new Error("Failed to fetch user")
     }
 

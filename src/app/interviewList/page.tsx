@@ -1,11 +1,11 @@
 "use client"
 
-import BookingList from "@/components/BookingList"
+import InterviewList from "@/components/InterviewList"
 
 export default function BookingListPage() {
     return (
         <main className="p-10">
-            <BookingList></BookingList>
+            <InterviewList></InterviewList>
         </main>
     )
 }
