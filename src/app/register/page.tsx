@@ -40,7 +40,7 @@ export default function RegisterPage() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md text-black"
               required
             />
           </div>
@@ -50,7 +50,7 @@ export default function RegisterPage() {
               type="tel"
               value={tel}
               onChange={(e) => setTel(e.target.value)}
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md text-black"
               required
             />
           </div>
@@ -60,7 +60,7 @@ export default function RegisterPage() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md text-black"
               required
             />
           </div>
@@ -70,7 +70,7 @@ export default function RegisterPage() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md text-black"
               required
             />
           </div>

@@ -11,7 +11,7 @@ export default async function Company() {
     
     return(
         <main className="text-center p-10 m-10">
-        <h1 className="text-xl font-medium text-black">Select Your Company</h1>
+        <h1 className="text-xl font-medium text-black font-sans">Select Your Company</h1>
         <Suspense fallback={<p>Loading...<LinearProgress/></p>}>
             <CompanyCatalog companiesJson={companies}/>
         </Suspense>

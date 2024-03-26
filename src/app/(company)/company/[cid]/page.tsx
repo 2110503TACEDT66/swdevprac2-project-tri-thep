@@ -6,15 +6,15 @@ export default async function CompanyDetailPage({params} : {params: {cid : strin
 
     return(
         <main className="text-center p-5">
-            <h1 className="text-xl font-medium p-10">
+            <h1 className="text-xl font-medium p-10 text-black shadow-gray-500 font-sans">
                 {companyID.data.name}
             </h1>
-            <div className="flex flex-row my-5">
+            <div className="flex flex-row my-5 ">
                 <Image src={companyID.data.picture}
                     alt="Company Image"
                     width={0} height={0} sizes="100vw"
                     className="rounded-lg w-[30%]"/>
-                <div className="text-md mx-5 text-left">
+                <div className="text-md mx-5 text-left text-black font-sans">
                     <div className="text-md mx-5">Address: {companyID.data.address}</div>
                     <div className="text-md mx-5">Website: {companyID.data.website}</div>
                     <div className="text-md mx-5">Tel:  {companyID.data.tel}</div>
